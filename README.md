@@ -1,40 +1,47 @@
-# Angular 2 Starter
+## angular-cli 构建工具 与 angular 版本的兼容情况
 
-The simplest starter kit you can find. Not trying to overcomplicate things, just get up and running with Angular 2. 
+> 通过 npm 去 运行安装在本地的 angular-cli 而不是全局的 cli 来解决版本兼容的问题
 
-All the essentials. None of the extras. Takes a lot of cues from the Angular [quickstart](https://angular.io/docs/ts/latest/quickstart.html).
+1. 明确构建工具 兼容的angular的版本；
 
-> This is a great starter for getting straight to the Angular 2 and not dealing with any of the setup.
+npm uninstall -g @angular/cli@wished.version.here
 
-## About
+* angular 2.1 所兼容的 cli 版本
 
-- **Transpiling ES6**: TypeScript compiled via npm script
-    + Compiled from the `app/` folder to the `dist/` folder
-- **Loading Imports**: SystemJS is the loader 
-- **Serving**: [lite-server](https://github.com/johnpapa/lite-server) serves our dev server
+npm i angular-cli@1.0.0-beta.18 -g
 
-## Requirements
+* 将其安装到项目本地，而不是全局，利用npm 命令 去运行；
 
-- [node and npm](https://nodejs.org)
 
-## Installation
+```js
+formErrors = {
+    name: '',
+    username: '',
+    addresses: [
+      { city: '', country: '' }
+    ]
+  };
+  validationMessages = {
+    name: {
+      required: 'Name is required.',
+      minlength: 'Name must be 3 characters.',
+      maxlength: 'Name can\'t be longer than 6 characters.'
+    },
+    username: {
+      required: 'Username is required.',
+      minlength: 'Username must be 3 characters.'
+    },
+    addresses: {
+      city: {
+        required: 'City is required.',
+        minlength: 'City must be 3 characters.'
+      },
+      country: {
+        required: 'Country is required.'
+      }
+    }
+  };
 
-- Clone the repo: `git clone git@github.com:scotch-io/angular2-starter-basic`
-- Choose the new directory: `cd angular2-starter-basic`
-- Install dependencies: `npm install`
-- Start the app: `npm start`
-- View the app: <http://localhost:3000>
+// now we've moved a lot of information 
 
-## Usage
-
-- The Angular application is found in the `app/` directory
-
-## Caveats
-
-- This is a very basic starter. If you want to use this in production, you're going to need to build out a lot more parts. Parts like:
-- Templates are referenced absolutely, which doesn't scale well.
-    + You'd want to have your build system help with referencing templates relatively. Better to not absolutely reference them as they could get lost in build systems in larger apps.
-
-## More Production Ready Setup
-
-- Use the [Angular CLI](https://cli.angular.io/)
+```
